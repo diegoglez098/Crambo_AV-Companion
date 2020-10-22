@@ -2,7 +2,6 @@ import React from "react";
 import '../App.css';
 import {Container,Col,Row,Button,ButtonGroup,ToggleButton} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from "axios"
 
 export default function Matrix12x12() {
     return (
@@ -10,8 +9,7 @@ export default function Matrix12x12() {
         <Container>
         <Row className = "row">
           <Col className="columns">
-          <a className = "App-font2">Salidas</a>
-          <br></br>
+          <p className = "App-font">Salidas</p>
   
           <ButtonGroup className="Buttons1"  vertical >
             <ButtonGroup size="lg">
@@ -36,8 +34,7 @@ export default function Matrix12x12() {
           </ButtonGroup>
           </Col>
           <Col className="columns">
-          <a className = "App-font2">Entradas</a>
-          <br></br>
+          <p className = "App-font">Entradas</p>
           <ButtonGroup className="Buttons1"  vertical >
             <ButtonGroup size="lg">
               <Button><a className = "App-font3">1</a></Button>

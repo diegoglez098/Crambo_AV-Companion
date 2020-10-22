@@ -6,19 +6,24 @@ import Matrix12x12 from "./components/Matrix12x12"
 import NavbarMain from "./components/Navbar"
 import DeviceSelector from "./components/DeviceSelector"
 import GetRequest from "./components/GetRequest"
+import Alert from "./components/Alert"
 
- class App extends Component {
-render() {
-  return (
-    <div className="App">
-    <NavbarMain />
-      <DeviceSelector />
-    <hr className="Divider"></hr>
-    <GetRequest />
-    <Matrix12x12/>
-    </div>
-  );
-  } 
+import Addbutton from './components/Addbutton';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+      <NavbarMain />
+      <b className = "App-font3">Mis dispositivos</b>
+      <br></br>
+        <DeviceSelector />
+      
+      <br></br>
+      <div className="FloatingMenu"><Addbutton /></div>
+      </div>
+    );
+    } 
 }
 
 export default App;

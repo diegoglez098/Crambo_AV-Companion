@@ -2,6 +2,8 @@ import React,{ useState, Component } from "react";
 import '../App.css';
 import {Container,Col,Row,Button,ButtonGroup,ToggleButton} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
+import TvIcon from '@material-ui/icons/Tv';
 
 class DeviceSelector extends Component {
     constructor( props ) {
@@ -17,53 +19,45 @@ class DeviceSelector extends Component {
   render() {
     return (
         <Container>
+        <br></br>
         <Row>
           <Col>
             <Button conClick = { this.toggleMatrix }className='Button' variant="primary">
             <img 
             src={require('../images/servidor.png')} 
             alt="Matrix"
-            width='100px'
-            height='100px'
+            width='70px'
+            height='70px'
             />
             <br></br>
-            <a className="App-font">BlackMagic</a>
+            <p className="App-font">BlackMagic</p>
             </Button>{' '}
           </Col>
           <Col>
             <Button className='Button'variant="success">
-            <img 
-            src={require('../images/iluminacion.png')} 
-            alt="Matrix"
-            width='100px'
-            height='100px'
-            />
+            <EmojiObjectsIcon  style={{ fontSize: 65,color: "white" }}/>
             <br></br>
-            <a className="App-font">Iluminación</a>
+            <p className="App-font">Iluminación</p>
             </Button>{' '}
           </Col>
           <Col>
             <Button className='Button'variant="danger">
-            <img 
-            src={require('../images/tv.png')} 
-            alt="Matrix"
-            width='100px'
-            height='100px'
-            />
+            <TvIcon  style={{ 
+            fontSize: 65 ,
+            color: "white"
+            }}/>
             <br></br>
-            <a className="App-font">Monitor 1</a>
+            <p className="App-font">Monitor 1</p>
             </Button>{' '}
           </Col>
           <Col>
             <Button className='Button'variant="danger">
-            <img 
-            src={require('../images/tv.png')} 
-            alt="Matrix"
-            width='100px'
-            height='100px'
-            />
+            <TvIcon  style={{ 
+            fontSize: 65 ,
+            color: "white"
+            }}/>
             <br></br>
-            <a className="App-font">Monitor 2</a>
+            <p className="App-font">Monitor 2</p>
             </Button>{' '}
           </Col>
         </Row>

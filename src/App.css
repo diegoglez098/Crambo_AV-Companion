@@ -11,7 +11,9 @@
 }
 
 .Button {
-  width: 200px;
+  margin-bottom: 20px;
+  width: 130px;
+  height: 110px;
 }
 .Divider {
   background-color: azure;
@@ -27,6 +29,11 @@
 }
 .Buttons1 {
   text-align: center;
+}
+.FloatingMenu {
+  position: absolute;
+  top: 85%;
+  right: 3%;
 }
 .row {
   text-align: center;
@@ -57,9 +64,14 @@
   font-size: 35px;
   color: azure;
 }
+.App-font4 {
+  text-align: center;
+  font-size: 15px;
+  color: azure;
+}
 .App-font {
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
   color: azure;
 }
 
