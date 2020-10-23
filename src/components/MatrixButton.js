@@ -2,34 +2,25 @@ import React from "react"
 import '../App.css';
 import {Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RouterIcon from '@material-ui/icons/Router';
 
-class MatrixButton extends Component {
 
-    constructor( props ) {
-        super(props)
-        this.state = {show : false};
+export default function MatrixButton(props){
+  const [open, toggleMatrix] = React.useState(false);
+
+  Matrixtoggle = () => {
+    toggleMatrix(!open)
+  }
+
+  return (
     
-        this.toggleMatrix = this.toggleMatrix.bind(this)
-      }
-      toggleMatrix = () => {
-        const { show } = this.state;
-        this.setState({ show: !show })
-      }
-
-render(){
-    return (
-    
-    <Button conClick = { this.toggleMatrix }className='Button' variant="primary">
-        <img 
-        src={require('../images/servidor.png')} 
-        alt="Matrix"
-        width='70px'
-        height='70px'
-        />
+    <Button conClick = {Matrixtoggle}className='Button' variant="primary">
+    <RouterIcon style={{ fontSize: 65,color: "white" }} />
     <br></br>
-    <p className="App-font">BlackMagic</p>
-    </Button>{' '}
-    )
+    <p className="App-font">{props.name}</p>
+    </Button>
+
+  )
+
 }
-}
-export default MatrixButton;
+

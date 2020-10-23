@@ -24,7 +24,6 @@ export default function FormDialog() {
         <DialogTitle id="form-dialog-title">Añadir nuevo monitor</DialogTitle>
         <DialogContent>
           <TextField
-            autoFocus
             margin="dense"
             id="name"
             label="Nombre del equipo"
@@ -32,7 +31,6 @@ export default function FormDialog() {
             fullWidth
           />
         <TextField
-            autoFocus
             margin="dense"
             id="ip"
             label="IP del equipo"

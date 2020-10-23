@@ -4,6 +4,7 @@ import {Container,Col,Row,Button,ButtonGroup,ToggleButton} from 'react-bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import TvIcon from '@material-ui/icons/Tv';
+import MatrixButton from "./MatrixButton";
 
 class DeviceSelector extends Component {
     constructor( props ) {
@@ -22,16 +23,8 @@ class DeviceSelector extends Component {
         <br></br>
         <Row>
           <Col>
-            <Button conClick = { this.toggleMatrix }className='Button' variant="primary">
-            <img 
-            src={require('../images/servidor.png')} 
-            alt="Matrix"
-            width='70px'
-            height='70px'
-            />
-            <br></br>
-            <p className="App-font">BlackMagic</p>
-            </Button>{' '}
+            <MatrixButton
+            name="Blackmagic" />
           </Col>
           <Col>
             <Button className='Button'variant="success">
