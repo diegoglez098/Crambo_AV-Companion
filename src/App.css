@@ -4,12 +4,20 @@
   width: 100%;
   height: 100vh;
 }
-
+.Selector {
+  background-color: #121418;
+  border-radius: 15px;
+  width: auto;
+  margin-bottom: 3%;
+  margin-top: 2%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+.Matrix {
+  margin-bottom: 5%;
+}
 .Button {
   margin-bottom: 20px;
   width: 130px;
@@ -61,7 +69,7 @@
 }
 .App-font3 {
   text-align: center;
-  font-size: 35px;
+  font-size: 25px;
   color: azure;
 }
 .App-font4 {

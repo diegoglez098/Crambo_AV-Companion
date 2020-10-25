@@ -1,11 +1,11 @@
 import json
 import os
-import flask
+from flask import Flask, request, jsonify
 import sys
 import telnetlib
 from flask_cors import CORS, cross_origin
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 app.config["DEBUG"] = True
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app, resources={r"/API/*": {"origins": "*"}})
@@ -26,18 +26,28 @@ def getIP():
     return str(data["IP"])
 
 
-@app.route('/API/v1.0/routing', methods=['GET', 'POST'])
+@app.route('/API/v1.0/routing', methods=['POST'])
 def routing():
     try:
         tn = telnetlib.Telnet(data["IP"], data['Port'], 15)
     except:
         return "No se ha podido conectar a " + data["Device"]
+    content = request.get_json()
 
     tn.write("VIDEO OUTPUT ROUTING \n")
-    tn.write(output + " " + input + "\n")
+    tn.write(str(content['output']) + " " + str(content['input']) + "\n")
     tn.write("\n")
 
     return "Conexion establecida a " + data["Device"]
+
+
+@app.route('/API/v1.0/test', methods=['POST'])
+def testing():
+    print(request.is_json)
+    content = request.get_json()
+    print("La salida es: "+content['output'] +
+          " y la entrada es: "+content['input'])
+    return 'JSON posted'
 
 
 app.run(host="192.168.0.16", port="5000")

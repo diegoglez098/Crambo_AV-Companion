@@ -7,6 +7,8 @@ import NavbarMain from "./components/Navbar"
 import DeviceSelector from "./components/DeviceSelector"
 import GetRequest from "./components/GetRequest"
 import Alert from "./components/Alert"
+import Pulse from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 
 import Addbutton from './components/Addbutton';
 
@@ -16,10 +18,8 @@ class App extends Component {
       <div className="App">
       <NavbarMain />
       <b className = "App-font3">Mis dispositivos</b>
-      <br></br>
-        <DeviceSelector />
-      
-      <br></br>
+      <Slide left><DeviceSelector /></Slide>
+      <Pulse><Matrix12x12/></Pulse>     
       <div className="FloatingMenu"><Addbutton /></div>
       </div>
     );

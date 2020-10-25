@@ -18,7 +18,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default function FormDialog() {
+export default function FormDialog(props) {
     const [open, setOpen] = React.useState(false);
     const [modal,openModal] = React.useState(false);
 
@@ -33,7 +33,7 @@ export default function FormDialog() {
 return (
 <div >
     <FloatingMenu
-      slideSpeed={500}
+      slideSpeed={350}
       direction="left"
       spacing={12}
       isOpen={open}
@@ -68,7 +68,7 @@ return (
     
   </FloatingMenu>
   <Dialog open={modal} onClose={Modal} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Añadir nuevo monitor</DialogTitle>
+        <DialogTitle id="form-dialog-title">Añadir nuevo {props.device}</DialogTitle>
         <DialogContent>
           <TextField
             
