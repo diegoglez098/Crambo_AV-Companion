@@ -20,6 +20,13 @@ export default function Matrix12x12() {
       alert("Seleccione una entrada de la matriz")
     }
     else{
+      var http = new XMLHttpRequest();
+      http.open("POST", 'http://192.168.0.16:5000/API/v1.0/blackmagic', true);
+      http.setRequestHeader("Content-Type", "application/json");
+      http.setRequestHeader("Access-Control-Allow-Origin", "*");
+      http.setRequestHeader("Accept", "*/*");
+
+      http.send(JSON.stringify({Input:input, Output: output}));
       alert("Enviado correctamente")
     }
 
