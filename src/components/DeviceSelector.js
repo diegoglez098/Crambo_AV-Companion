@@ -23,7 +23,6 @@ export default function DeviceSelector(props){
           <Col>
           <MonitorButton name = "Monitor 2" />
           </Col>
-
         </Row>
       </Container> 
   )

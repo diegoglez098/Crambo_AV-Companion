@@ -6,7 +6,8 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
-cors = CORS(app, resources={r"/API/*": {"origins": "http://localhost:3000"}})
+cors = CORS(app, resources={
+            r"/API/*": {"origins": "http://192.168.0.16:3000"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 Folder = os.path.dirname(os.path.abspath(
@@ -27,6 +28,10 @@ def getIP():
 
 @app.route('/API/v1.0/blackmagic', methods=['GET', 'POST'])
 def routing():
+    content = request.get_json()
+
+    print("La salida es: "+str(content['Output']) +
+          " y la entrada es: "+str(content['Input']))
     try:
         tn = telnetlib.Telnet(data["IP"], data['Port'], 5)
     except:
@@ -37,6 +42,7 @@ def routing():
     tn.write("VIDEO OUTPUT ROUTING \n")
     tn.write(str(content['Output']) + " " + str(content['Input']) + "\n")
     tn.write("\n")
+    tn.close()
 
     return "Enviado correctamente a " + data["Device"]
 
@@ -49,6 +55,18 @@ def testing():
     print("La salida es: "+str(content['Output']) +
           " y la entrada es: "+str(content['Input']))
     return 'JSON posted'
+
+
+@app.route('/API/v1.0/blackmagic_connect', methods=['GET'])
+@cross_origin()
+def connect():
+    try:
+        connection = telnetlib.Telnet(data["IP"], data['Port'], 0)
+    except:
+        return 0
+
+    connection.close()
+    return 1
 
 
 app.run(host="192.168.0.16", port="5000")

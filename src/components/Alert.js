@@ -1,38 +1,37 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from "react"
 import '../App.css';
-import {Alert} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Snackbar from '@material-ui/core/Snackbar';
 
-class connectStatus extends React.Component {
-    constructor(props) {
-        super(props);
+export default function MatrixButton(props){
+    var [color,setColor] = useState('success')
+    var [open, setOpen] = useState(false)
+    var [msg,setMsg] = useState('Error al conectar')
 
-        this.state = {
-            rs: null
-        };
-    }
-
-    componentDidMount() {
-        const headers = {
-            "Access-Control-Allow-Origin": "http://localhost:3000",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+    const getColor = () =>{
+        var http = new XMLHttpRequest();
+        http.open("GET", 'http://192.168.0.16:5000/API/v1.0/blackmagic_connect', true);
+        if (http.response == 1){
+            setColor('success')
+            setOpen(true)
+            setMsg('Conectado correctamente')
         }
-        axios.get('http://192.168.0.16:5000/API/v1.0/routing',{ headers })
-            .then(response => this.setState({ rs: response.data }));
+        else if (http.response == 0){
+            setColor('warning')
+            setOpen(true)
+            setMsg('Error al conectar')
+        }
     }
 
-    componentDidUpdate(){
-        setTimeout(() => this.setState({rs:''}), 3000);
-      }
+  return (
+    <Snackbar
+        open={open}
+        onLoad={()=>getColor()}
+        autoHideDuration={6000}
+        anchorOrigin={{ vertical:'bottom', horizontal:'left', }}
+        message={msg}>
+    </Snackbar>
 
-    render() {
-        const { rs } = this.state;
-        return (        
-        <Alert variant="danger">
-        <a className = 'App-font4'>{rs}</a>
-        </Alert>
-        );
-    }
+  )
+
 }
-
-export default connectStatus; 
