@@ -3,8 +3,9 @@ import '../App.css';
 import {Container,Col,Row,Button,ButtonGroup,ToggleButton} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SendIcon from '@material-ui/icons/Send';
+import Pulse from 'react-reveal/Fade';
 
-export default function Matrix12x12() {
+export default function Matrix12x12(props) {
   const [output,setOutput] = useState(0)
   const [input,setInput] = useState(0)
   
@@ -21,7 +22,7 @@ export default function Matrix12x12() {
     }
     else{
       var http = new XMLHttpRequest();
-      http.open("POST", 'http://192.168.0.16:5000/API/v1.0/blackmagic', true);
+      http.open("POST", 'http://192.168.0.220:5000/API/v1.0/blackmagic', true);
       http.setRequestHeader("Content-Type", "application/json");
       http.setRequestHeader("Access-Control-Allow-Origin", "*");
       http.setRequestHeader("Accept", "*/*");
@@ -644,7 +645,7 @@ export default function Matrix12x12() {
       }
     }
     return (
-    <div className="Buttons">
+    <div className="Buttons" >
         <Container className = 'Matrix'>
         <Row className = "row">
           <Col className="columns">
@@ -697,7 +698,7 @@ export default function Matrix12x12() {
           </Col>
           </Row>
         </Container>
-      <Button variant="primary" onClick={() =>sendRouting()} size="lg">
+      <Button style={{ "margin-bottom":"20px"}} variant="primary" onClick={() =>sendRouting()} size="lg">
         <SendIcon /> Enviar</Button>
 
     </div>

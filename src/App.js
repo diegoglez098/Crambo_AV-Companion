@@ -16,7 +16,6 @@ class App extends Component {
       <NavbarMain />
       <b className = "App-font3">Mis dispositivos</b>
       <Slide left><DeviceSelector /></Slide>
-      <Pulse><Matrix12x12/></Pulse>   
       <Alert />  
       <div className="FloatingMenu"><Addbutton /></div>
       </div>

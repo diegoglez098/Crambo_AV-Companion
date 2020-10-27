@@ -31,7 +31,7 @@ export default function FormDialog(props) {
     };
 
 return (
-<div >
+<div className="AddButton">
     <FloatingMenu
       slideSpeed={350}
       direction="left"
@@ -41,8 +41,8 @@ return (
         <MainButton
         iconResting={<MdAdd style={{ color:"white", fontSize: 40}} nativeColor="white" />}
         iconActive={<MdClose style={{ color:"white",fontSize: 40 }} nativeColor="white" />}
-        backgroudColor="white"
         onClick={handleClickOpen}
+        background="#4287f5"
         size={80}
         />
         <ChildButton
@@ -53,16 +53,17 @@ return (
         color="white"
         size={80}
         opened={Modal}
+        background="#4287f5"
         onClick={openModal}
         />
         <ChildButton
         icon={<EmojiObjectsIcon  style={{ fontSize: 40,color: "white" }} nativeColor="white" />}
-        backgroundColor="white"
         size={80}
+        background="#4287f5"
         />
         <ChildButton
         icon={<RouterIcon  style={{ fontSize: 40,color: "white" }} nativeColor="white" />}
-        backgroundColor="white"
+        background="#4287f5"
         size={80}
         />
     
