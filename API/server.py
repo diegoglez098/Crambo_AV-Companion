@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 app.config["DEBUG"] = True
 cors = CORS(app, resources={
-            r"/API/*": {"origins": "http://192.168.0.16:3000"}})
+            r"/API/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 Folder = os.path.dirname(os.path.abspath(
@@ -30,15 +30,19 @@ def getIP():
 def routing():
     content = request.get_json()
 
-    print("La salida es: "+str(content['Output']) +
-          " y la entrada es: "+str(content['Input']))
+    print("VIDEO OUTPUT ROUTING \n")
+    print(str(content['Output']) + " " + str(content['Input']) + "\n")
+    print("\n")
+
     try:
         tn = telnetlib.Telnet(data["IP"], data['Port'], 5)
     except:
         return "No se ha podido conectar a " + data["Device"]
 
     content = request.get_json()
-    print(content)
+    print("VIDEO OUTPUT ROUTING \n")
+    print("VIDEO OUTPUT ROUTING \n")
+
     tn.write("VIDEO OUTPUT ROUTING \n")
     tn.write(str(content['Output']) + " " + str(content['Input']) + "\n")
     tn.write("\n")

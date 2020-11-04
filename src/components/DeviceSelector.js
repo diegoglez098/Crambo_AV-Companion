@@ -23,7 +23,6 @@ export default function DeviceSelector(props){
   const switchToggle = () => {
     toggleSwitch(!openToggle)
     toggleMatrix(false)
-
   }
   return (
       <Container className= "Selector">
