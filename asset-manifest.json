@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/diegoglez098/Crambo_AV-Companion/static/css/main.2899713e.chunk.css",
+    "main.js": "/diegoglez098/Crambo_AV-Companion/static/js/main.9c0b8e57.chunk.js",
+    "main.js.map": "/diegoglez098/Crambo_AV-Companion/static/js/main.9c0b8e57.chunk.js.map",
+    "runtime-main.js": "/diegoglez098/Crambo_AV-Companion/static/js/runtime-main.3990cf29.js",
+    "runtime-main.js.map": "/diegoglez098/Crambo_AV-Companion/static/js/runtime-main.3990cf29.js.map",
+    "static/css/2.09a012b4.chunk.css": "/diegoglez098/Crambo_AV-Companion/static/css/2.09a012b4.chunk.css",
+    "static/js/2.0ce12401.chunk.js": "/diegoglez098/Crambo_AV-Companion/static/js/2.0ce12401.chunk.js",
+    "static/js/2.0ce12401.chunk.js.map": "/diegoglez098/Crambo_AV-Companion/static/js/2.0ce12401.chunk.js.map",
+    "index.html": "/diegoglez098/Crambo_AV-Companion/index.html",
+    "precache-manifest.77b520379c050e959a7c66e502a61bc5.js": "/diegoglez098/Crambo_AV-Companion/precache-manifest.77b520379c050e959a7c66e502a61bc5.js",
+    "service-worker.js": "/diegoglez098/Crambo_AV-Companion/service-worker.js",
+    "static/css/2.09a012b4.chunk.css.map": "/diegoglez098/Crambo_AV-Companion/static/css/2.09a012b4.chunk.css.map",
+    "static/css/main.2899713e.chunk.css.map": "/diegoglez098/Crambo_AV-Companion/static/css/main.2899713e.chunk.css.map",
+    "static/js/2.0ce12401.chunk.js.LICENSE.txt": "/diegoglez098/Crambo_AV-Companion/static/js/2.0ce12401.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3990cf29.js",
+    "static/css/2.09a012b4.chunk.css",
+    "static/js/2.0ce12401.chunk.js",
+    "static/css/main.2899713e.chunk.css",
+    "static/js/main.9c0b8e57.chunk.js"
+  ]
+}
